@@ -1,0 +1,19 @@
+version: '3.8'
+
+networks:
+    micros:
+        driver: overlay
+        attachable: true
+
+services:
+    app:
+        build: .
+        image: scouto_app:dev
+        ports:
+            - 8000:8000
+        environment:
+            S3_REGION: asia-south1
+        volumes:
+            - .:/app
+        networks:
+            - micros

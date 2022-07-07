@@ -61,5 +61,5 @@ def handleInterval():
 Timer(60, handleInterval).start()
 
 if __name__ == '__main__':
-    socketio.run(app, debug=True)
-    # app.run()
+    # socketio.run(app, debug=True)
+    app.run()
