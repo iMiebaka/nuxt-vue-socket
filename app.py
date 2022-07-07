@@ -21,7 +21,6 @@ def connected():
     clients[request.sid] = {
         'joined_at': time.time(),
     }
-    emit('message', 'Client connected')
 
 @socketio.on('disconnect')
 def disconnected():
@@ -61,5 +60,5 @@ def handleInterval():
 Timer(60, handleInterval).start()
 
 if __name__ == '__main__':
-    # socketio.run(app, debug=True)
-    app.run()
+    socketio.run(app, debug=True)
+    # app.run()
